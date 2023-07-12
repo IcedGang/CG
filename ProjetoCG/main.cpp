@@ -34,7 +34,7 @@ void display(){
     glClear(GL_COLOR_BUFFER_BIT);
     glLoadIdentity();
 
-    glBegin(GL_POLYGON); // Inicio; Define o tipo de renderização
+    glBegin(GL_POLYGON); // Inicio da renderização e tipo
 
     glVertex2f(0.0, 5.0);
     glVertex2f(-4.0, 3.0);
@@ -43,8 +43,8 @@ void display(){
     glVertex2f(4.0, -3.0);
     glVertex2f(4.0, 3.0);
 
-    glEnd();
-    glFlush();
+    glEnd(); // Fim da rederização
+    glFlush(); // Esvazia os Buffers
 }
 
 // Config da viewport
