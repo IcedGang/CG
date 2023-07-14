@@ -328,3 +328,9 @@
 	<GL/gl.h>
 	<GL/glu.h>
 
+1689355575 source:c:\users\vitor\onedrive\documentos\cg\projetocg\main.cpp
+	<windows.h>
+	<GL/gl.h>
+	<GL/glu.h>
+	<GL/glut.h>
+
