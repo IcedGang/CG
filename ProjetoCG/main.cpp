@@ -7,24 +7,24 @@
 #include <GL/glut.h>
 
 /*
-    Discentes: Kauan Souza Teles e Vítor Coutinho Lima
+    Discentes: Kauan Souza Teles e VÃ­tor Coutinho Lima
 
 */
 
-// Protótipo das Funções
+// ProtÃ³tipo das FunÃ§Ãµes
 void display();
 void reshape(int, int);
 void init();
 void anitmation(int);
 
-// Função da figura
+// FunÃ§Ã£o da figura
 void square(GLenum);
 
-// Váriavéis Globlais
-float x_position = -9.95; // começa na borda esquerda
+// VÃ¡riavÃ©is Globlais
+float x_position = -9.95; // comeÃ§a na borda esquerda
 float y_position = 0.0; // no meio da janela
 
-// Flags da função animation
+// Flags da funÃ§Ã£o animation
 int state = 1;
 int st = 1;
 int st2 = 1;
@@ -41,7 +41,7 @@ int main(int argc, char** argv){
     glutDisplayFunc(display);
 
     glutReshapeFunc(reshape); // Viewport
-    glutTimerFunc(0, anitmation, 0); // Animação
+    glutTimerFunc(0, anitmation, 0); // AnimaÃ§Ã£o
 
     init();
     glutMainLoop(); // Loop da janela
@@ -58,18 +58,18 @@ void display(){
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
 
-    glTranslatef(x_position, y_position, 0.0);
+    glTranslatef(x_position, y_position, 0.0); //Reposiciona a Figura a cada frame da animaÃ§Ã£o
     square(GL_LINE_LOOP);
 
     glutSwapBuffers(); // Esvazia os Buffers
 }
 
-// Animação
+// AnimaÃ§Ã£o
 void anitmation(int){
     glutPostRedisplay();
     glutTimerFunc(1000/90, anitmation, 0); //60 frames por segundo
 
-    // posição da figura
+    // posiÃ§Ã£o da figura
     switch(state){
         //ida
         case 1:
@@ -143,12 +143,12 @@ void reshape(int w, int h){
 // Quadrado
 void square(GLenum mode){
 
-    glBegin(mode); // Inicio da renderização e tipo
+    glBegin(mode); // Inicio da renderizaÃ§Ã£o e tipo
 
     glVertex2f(-1.0,  1.0);
     glVertex2f(-1.0, -1.0);
     glVertex2f(1.0, -1.0);
     glVertex2f(1.0, 1.0);
 
-    glEnd(); // Fim da rederização
+    glEnd(); // Fim da rederizaÃ§Ã£o
 }
